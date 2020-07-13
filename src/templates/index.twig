@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    {% if graphicGlobal.favicon | length%}
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{graphicGlobal.favicon.one().getUrl()}}"
+    />
+    
+    {% endif %}
+  </head>
+  <body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <main>
+      {% block main %}
+      {% endblock %}
+    </main>
+
+    <footer class="c-footer">
+      {% include 'partials/_footer.twig' %}
+    </footer>
+  </body>
+</html>
