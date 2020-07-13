@@ -1,0 +1,68 @@
+version: '2'
+services:
+  nginx:
+      build:
+        context: .
+        dockerfile: ./docker-config/nginx/Dockerfile
+      ports:
+          - 80:80
+      volumes:
+          - cpresources:/var/www/html/web/cpresources
+          - ./src/web:/var/www/html/web
+
+  php:
+      build:
+        context: .
+        dockerfile: ./docker-config/php/Dockerfile
+      expose:
+          - 9000
+      volumes:
+          - cpresources:/var/www/html/web/cpresources
+          - ./src/composer.json:/var/www/html/composer.json
+          - ./src/composer.lock:/var/www/html/composer.lock
+          - ./src/config:/var/www/html/config
+          - ./src/modules:/var/www/html/modules
+          - ./src/templates:/var/www/html/templates
+          - ./src/web:/var/www/html/web
+      environment:
+        ENVIRONMENT: dev
+        DB_DRIVER: mysql
+        DB_SERVER: database
+        DB_USER: project
+        DB_PASSWORD: project
+        DB_DATABASE: project
+        DB_SCHEMA: public
+        DB_TABLE_PREFIX: craft_
+        SITE_URL: http://albus.localhost
+        SECURITY_KEY: AAAAAAAAAAAAAAAAAAAAAAAAAAA
+        DB_DSN: mysql:host=database;port=3306;dbname=project
+
+  database:
+      image: mariadb:10.3
+      volumes:
+          - db-data:/var/lib/mysql
+      ports:
+          - 3306:3306
+      environment:
+          MYSQL_ROOT_PASSWORD: secret
+          MYSQL_DATABASE: project
+          MYSQL_USER: project
+          MYSQL_PASSWORD: project
+
+  buildchain:
+      build:
+        context: .
+        dockerfile: ./docker-config/buildchain/Dockerfile
+      volumes:
+          - node-modules:/project/node_modules
+          - ./docker-config/buildchain/package.json:/project/package.json
+          - ./docker-config/buildchain/postcss.config.json:/project/postcss.config.json
+          - ./docker-config/buildchain/tailwind.config.json:/project/tailwind.config.json
+          - ./docker-config/buildchain/stylelint.config.json:/project/stylelint.config.json
+          - ./src:/project/src
+      command: ['yarn', 'start']
+
+volumes:
+  db-data:
+  cpresources:
+  node-modules: 

@@ -1,0 +1,33 @@
+dateModified: 1594655872
+email:
+  fromEmail: sigurd@kult.design
+  fromName: Albus
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  a87af59e-f9be-4d3d-8adb-32c2cebf6a1e:
+    name: Common
+siteGroups:
+  2a84bc2b-ce96-4735-9ac4-2bdbacee610b:
+    name: Albus
+sites:
+  c094488d-9c14-45c5-8c51-6323d0864a59:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: nb
+    name: Albus
+    primary: true
+    siteGroup: 2a84bc2b-ce96-4735-9ac4-2bdbacee610b
+    sortOrder: 1
+system:
+  edition: pro
+  live: true
+  name: Albus
+  schemaVersion: 3.4.10
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
