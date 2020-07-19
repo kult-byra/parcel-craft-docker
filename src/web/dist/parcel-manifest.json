@@ -1,6 +1,6 @@
 {
   "assets-manifest.html": "assets-manifest.html",
   "js/index.js": "js.00a46daa.js",
-  "scss/main.scss": "main.77bb5cfd.css",
+  "scss/main.scss": "js.00a46daa.css",
   "../../../node_modules/parcel-bundler/src/builtins/css-loader.js": "main.77bb5cfd.js"
 }

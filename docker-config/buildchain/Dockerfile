@@ -20,8 +20,4 @@ COPY --chown=www-data:www-data ./src/web ./src/web
 
 RUN yarn install
 
-RUN ls
-RUN cd . 
-RUN ls
-
 RUN yarn build
