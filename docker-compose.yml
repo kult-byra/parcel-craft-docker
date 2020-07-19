@@ -34,7 +34,7 @@ services:
         DB_DATABASE: project
         DB_SCHEMA: public
         DB_TABLE_PREFIX: craft_
-        SITE_URL: http://albus.localhost
+        SITE_URL: http://craftdev.localhost
         SECURITY_KEY: AAAAAAAAAAAAAAAAAAAAAAAAAAA
         DB_DSN: mysql:host=database;port=3306;dbname=project
 
