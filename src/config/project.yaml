@@ -1,4 +1,4 @@
-dateModified: 1594655872
+dateModified: 1595160088
 email:
   fromEmail: sigurd@kult.design
   fromName: Albus
@@ -6,6 +6,19 @@ email:
 fieldGroups:
   a87af59e-f9be-4d3d-8adb-32c2cebf6a1e:
     name: Common
+graphql:
+  schemas:
+    e7648bfa-71ca-4f58-9cb0-ecee89f17fb2:
+      isPublic: true
+      name: 'Public Schema'
+plugins:
+  parcel-twig:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      distPath: dist
+      manifestPath: dist/parcel-manifest.json
 siteGroups:
   2a84bc2b-ce96-4735-9ac4-2bdbacee610b:
     name: Albus
@@ -23,7 +36,7 @@ system:
   edition: pro
   live: true
   name: Albus
-  schemaVersion: 3.4.10
+  schemaVersion: 3.4.11
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false

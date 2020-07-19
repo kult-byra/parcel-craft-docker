@@ -24,6 +24,7 @@ services:
           - ./src/modules:/var/www/html/modules
           - ./src/templates:/var/www/html/templates
           - ./src/web:/var/www/html/web
+          - ./src/plugins:/var/www/html/plugins
       environment:
         ENVIRONMENT: dev
         DB_DRIVER: mysql

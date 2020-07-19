@@ -85,11 +85,11 @@ class SiteModule extends Module
     {
         parent::init();
 
-        if (Craft::$app->request->getIsSiteRequest()) {
+        /* if (Craft::$app->request->getIsSiteRequest()) {
             // Add in our Twig extension
             $extension = new ParcelTwig();
             Craft::$app->view->registerTwigExtension($extension);
-        }
+        } */
        
     }
 
