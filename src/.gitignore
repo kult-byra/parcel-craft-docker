@@ -1,5 +1,5 @@
 /.env
 /.idea
 /vendor
-/src/web/dist
+src/web/dist
 .DS_Store
