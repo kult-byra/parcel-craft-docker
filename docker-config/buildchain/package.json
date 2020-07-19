@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel watch -d src/web/dist --public-url . --no-source-maps src/web/assets/assets-manifest.html",
+    "start": "parcel watch -d src/web/dist --public-url . --no-source-maps src/web/assets/assets-manifest.html --hmr-port=1235",
     "build": "set NODE_ENV=production && parcel build -d ./src/web/dist --public-url . --no-source-maps ./src/web/assets/assets-manifest.html",
-    "prebuild": "rm -rf src/web/dist"
+    "prebuild": "rm -rf src/web/dist",
+    "postinstall": "patch-package parcel-bundler"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.2",
@@ -34,8 +35,11 @@
   },
   "dependencies": {
     "@tailwindcss/ui": "^0.2.2",
-    "masonry-layout": "^4.2.2",
-    "rellax": "^1.12.1",
+    "glider-js": "^1.7.3",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
+    "scss": "^0.2.4",
+    "src": "^1.1.2",
     "tailwindcss": "^1.3.3"
   }
 }

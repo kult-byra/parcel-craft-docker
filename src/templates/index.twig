@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    {% if graphicGlobal.favicon | length%}
+    {% if graphicGlobal is defined%}
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
       href="{{graphicGlobal.favicon.one().getUrl()}}"
     />
-    
     {% endif %}
+    {{asset("scss/main.scss")}}
+    {{asset("js/index.js")}}
   </head>
   <body>
     <!--[if IE]>
@@ -20,10 +21,11 @@
 
     <main>
       {% block main %}
+      <h1>Hello world</h1>
       {% endblock %}
     </main>
 
-    <footer class="c-footer">
+    <footer>
       {% include 'partials/_footer.twig' %}
     </footer>
   </body>

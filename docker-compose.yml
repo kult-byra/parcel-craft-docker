@@ -53,6 +53,8 @@ services:
       build:
         context: .
         dockerfile: ./docker-config/buildchain/Dockerfile
+      ports:
+          - 1235:1235
       volumes:
           - node-modules:/project/node_modules
           - ./docker-config/buildchain/package.json:/project/package.json
