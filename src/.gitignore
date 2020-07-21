@@ -1,7 +1,10 @@
 /.env
 /.idea
 /vendor
+/storage
 /plugins
 web/dist
+web/cpresources
+web/images
 .DS_Store
 

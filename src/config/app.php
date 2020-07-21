@@ -14,26 +14,8 @@
  */
 
 return [
-
-    // All environments
-    '*'       => [
-        'modules'   => [
-            'site-module' => [
-                'class' => \modules\sitemodule\SiteModule::class,
-            ],
-        ],
-        'bootstrap' => ['site-module'],
+    'modules' => [
+        'my-module' => \modules\Module::class,
     ],
-
-    // Live (production) environment
-    'live'    => [
-    ],
-
-    // Staging (pre-production) environment
-    'staging' => [
-    ],
-
-    // Local (development) environment
-    'local'   => [
-    ],
+    //'bootstrap' => ['my-module'],
 ];
