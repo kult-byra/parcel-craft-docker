@@ -18,13 +18,8 @@ services:
           - 9000
       volumes:
           - cpresources:/var/www/html/web/cpresources
-          - ./src/composer.json:/var/www/html/composer.json
-          - ./src/composer.lock:/var/www/html/composer.lock
-          - ./src/config:/var/www/html/config
-          - ./src/modules:/var/www/html/modules
-          - ./src/templates:/var/www/html/templates
-          - ./src/web:/var/www/html/web
-          - ./src/plugins:/var/www/html/plugins
+          - storage:/var/www/html/storage
+          - ./src:/var/www/html
       environment:
         ENVIRONMENT: dev
         DB_DRIVER: mysql
@@ -68,4 +63,5 @@ services:
 volumes:
   db-data:
   cpresources:
+  storage:
   node-modules: 

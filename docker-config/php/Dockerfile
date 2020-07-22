@@ -29,6 +29,10 @@ RUN echo "upload_max_filesize = 50M" > /usr/local/etc/php/php.ini && \
 
 COPY --chown=www-data:www-data ./src /var/www/html
 
-RUN composer install -d /var/www/html/ && \
+RUN chown -R www-data:www-data ~/.composer
+
+CMD composer install -d /var/www/html/ && \
     chown -R www-data:www-data /var/www/html/vendor && \
-    chown -R www-data:www-data /var/www/html/composer.lock
+    chown -R www-data:www-data /var/www/html/storage && \
+    composer craft-update && \
+    php-fpm
