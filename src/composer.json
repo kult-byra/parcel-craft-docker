@@ -1,6 +1,7 @@
 {
   "require": {
     "craftcms/cms": "^3.4.25",
+    "heggemsnes/parcel-twig": "dev-master",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
